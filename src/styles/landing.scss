@@ -69,22 +69,25 @@
   .intro {
     position: absolute;
     top: 20%;
-    left: 6rem;
+    
     width: 100vw;
     height: 60%;
     z-index: 2;
     color: white;
   
     h4 {
+      padding-left: 4rem;
       font-size: 5vw; /* Changed from rem to vw */
     }
 
     h2 {
+      padding-left: 4rem;
       font-size: 5vw; /* Changed from rem to vw */
       width: 93%;
     }
   
     h1 {
+      padding-left: 4rem;
       font-size: 8vw; /* Changed from rem to vw */
       width: 93%;
     }

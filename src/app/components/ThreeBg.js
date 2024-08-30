@@ -56,7 +56,7 @@ const ThreeBg = () => {
       positions[i * 3 + 2] = z;
 
       // Set the size (make some stars brighter)
-      sizes[i] = Math.random() * 4 + 2; // Larger stars
+      sizes[i] = Math.random() * 4 + 5; // Larger stars
 
       // Set color with realistic star colors (white, yellow, blue)
       const color = new THREE.Color();

@@ -6,6 +6,7 @@ const Contact = () => {
           <div className="section__header--title">
             <div className="section__header--subtitle">
               <div className="contact__form">
+              <h1 className="projects__header">Contact Me!</h1>
                 <form
                   className="form"
                   action="https://formspree.io/f/meojabrr"

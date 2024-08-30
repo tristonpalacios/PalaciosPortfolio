@@ -169,7 +169,13 @@
        .animButton{
         transform: scale3d(1,1,1);
         font-size: 19px;
+        height: 15vh;
        }
+       .animButton::before span {
+        display: flex; /* Flexbox for alignment */
+        justify-content: center; /* Center the text horizontally */
+        align-items: center; /* Center the text vertically */
+    }
         
     }
 }
