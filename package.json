@@ -9,8 +9,36 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "@headlessui/react": "^1.7.19",
+    "@heroicons/react": "^2.1.5",
+    "bootstrap": "^5.3.3",
+    "cloudinary": "^1.41.3",
+    "eslint-config-next": "^13.5.6",
+    "framer-motion": "^7.10.3",
+    "gsap": "^3.12.5",
+    "imagesloaded": "^5.0.0",
+    "lg-thumbnail.js": "^1.2.0",
+    "lightgallery": "^2.7.2",
+    "lightgallery.js": "^1.4.0",
+    "lqip-modern": "^2.1.0",
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18.3.1",
+    "react-hooks-global-state": "^2.1.0",
+    "react-icons": "^5.2.1",
+    "react-photo-album": "^3.0.0",
+    "react-swipeable": "^7.0.1",
+    "react-use-keypress": "^1.3.1",
+    "sass": "^1.77.8",
+    "smooth-scrollbar": "^8.8.4",
+    "three": "^0.167.0",
+    "yet-another-react-lightbox": "^3.21.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.0.0",
+    "@types/react": "18.3.3",
+    "typescript": "5.5.4",
+    "webpack-glsl-loader": "^1.0.1"
   }
 }

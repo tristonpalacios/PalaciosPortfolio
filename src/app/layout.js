@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
+import Head from "next/head";
+import Script from "next/script";
 import "./globals.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +14,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </Head>
+      <body className={inter.className}>
+        {children}
+        <Script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" strategy="beforeInteractive" />
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" strategy="beforeInteractive" />
+        <Script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" strategy="beforeInteractive" />
+      </body>
     </html>
   );
 }

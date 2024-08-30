@@ -1,0 +1,107 @@
+@import "./base.scss";
+
+.loading{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    background-color: blue;
+    display: grid;
+    place-items: center;
+    &__box{
+        position: relative;
+        width: 50%;
+        height: 20vh;
+        border: 3px solid $green-color;
+        border-top: 3px solid  $green-color;
+        border-bottom: 3px solid  $green-color;
+    }
+    &__bar{
+        width: 90%;
+        height: 1vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 2px ;
+        &--inner{
+            height: 100%;
+            width: 0%;
+            border-radius: 2px;
+            background:  $green-color;
+        }
+    }
+    &__text{
+        position: relative;
+        color: white;
+        font-size: 2em;
+        font-weight: 700;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        
+        &--dot{
+            width: 5%;
+            height: 2vh;
+            margin: 0 3px;
+            border-radius: 50%;
+            background: white;
+            animation: pulse 1s infinite;
+            @keyframes pulse {
+                from{
+                    opacity: 0;
+                    background:  $dark-green-color;
+                }to{
+                    opacity: 1;
+                }
+            }
+        }
+        &--border{
+            width: 85%;
+            height: .05em;
+            background:  $green-color;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__counter{
+        position: absolute;
+        top: 70%;
+        left: 0;
+        color: white;
+        font-size: 2vw;
+        font-weight: 700;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1vh;
+        &--number{
+            color:  $green-color;
+        }
+    }
+    &__width_animation{
+        animation: width_animation 1s forwards;
+        @keyframes width_animation{
+            0%{
+                width: 85%;
+            }100%{
+                width: 50%;
+            }
+        }
+    }
+    &__svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+    }
+}

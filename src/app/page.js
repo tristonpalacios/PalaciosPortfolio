@@ -1,95 +1,133 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import imagesLoaded from "imagesloaded";
+import useSmoothScrollbar from "./hooks/useSmoothScrollbar";
+import Shaded from "./components/Shaded";
+import ThreeBg from "./components/ThreeBg";
+import Loading from "./components/Loading";
+import Header from "./components/Header";
+import Intro from "./components/Intro";
+import Socials from "./components/Socials";
+import ScrollDown from "./components/ScrollDown";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import PageHead from "next/head";
+import "../styles/base.scss";
+import "../styles/loader.scss";
+import "../styles/landing.scss";
+import "../styles/skills.scss";
+import "../styles/projects.scss";
+import "../styles/contact.scss";
+import "../styles/animLinks.scss";
 
 export default function Home() {
+  const [imagesLoadedFlag, setImagesLoadedFlag] = useState(false);
+  const barRef = useRef(null);
+  const loadingPercentRef = useRef(null);
+  let counter = 0;
+
+  useSmoothScrollbar(imagesLoadedFlag);
+
+  useEffect(() => {
+    barRef.current = document.querySelector(".loading__bar--inner");
+    loadingPercentRef.current = document.querySelector(
+      ".loading__counter--number"
+    );
+
+    const bar = barRef.current;
+    const loadingPercent = loadingPercentRef.current;
+
+    const barInterval = setInterval(() => {
+      bar.style.width = counter + "%";
+      loadingPercent.innerText = `${counter}%`;
+      counter++;
+      if (counter === 101) {
+        clearInterval(barInterval);
+        gsap.to(".loading__bar", {
+          duration: 5,
+          rotate: "90deg",
+          left: "1000%",
+          bottom: "250%",
+        });
+        gsap.to(".loading__text, .loading_counter", {
+          duration: 1,
+          opacity: 0,
+        });
+
+        gsap.to(".loading__svg", {
+          duration: 10,
+          opacity: 1,
+          rotate: "360deg",
+          zIndex: -5,
+        });
+
+        gsap.to(".loading__box", {
+          duration: 2,
+          border: "none",
+        });
+
+        imagesLoaded(document.querySelectorAll("img"), () => {
+          gsap.to(".loading", {
+            delay: 2,
+            duration: 2,
+            zIndex: 1,
+            background: "transparent",
+            opacity: 0.0,
+          });
+
+          gsap.to("header", {
+            duration: 1,
+            delay: 2,
+            top: "0",
+            zIndex: 1,
+          });
+          gsap.to(".socials", {
+            duration: 1,
+            delay: 2.5,
+            bottom: "5rem",
+            zIndex: "1",
+          });
+
+          gsap.to(".scrollDown", {
+            duration: 1,
+            delay: 3,
+            bottom: "3rem",
+            zIndex: "1",
+          });
+
+          setTimeout(() => {
+            setImagesLoadedFlag(true);
+          }, 2000);
+        });
+      }
+    }, 10);
+
+    return () => clearInterval(barInterval);
+  }, []);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
+    <>
+      <PageHead />
+      <Loading />
+      <div className="landing">
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+          <ThreeBg />
+        </div>
+
+        <Header />
+        <Intro />
+        <div className="scroll-container">
+          <Shaded />
+          <Socials />
+          <ScrollDown />
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Skills />
+      <Projects />
+      <Contact />
+    </>
   );
 }
