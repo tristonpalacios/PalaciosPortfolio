@@ -1,3 +1,17 @@
+const photos = [
+  {
+    src: "/assets/images/loaders/Tagilla.png",
+    width: 1080,
+    height: 720,
+    alt: "Photo by Diego Guzmán",
+  },
+  {
+    src: "/assets/images/loaders/PropitalAmmo1.png",
+    width: 1080,
+    height: 720,
+    alt: "Photo by Diego Guzmán",
+  },
+];
 const Contact = () => {
   return (
     <section className="section contact" id="Contact">
@@ -6,7 +20,7 @@ const Contact = () => {
           <div className="section__header--title">
             <div className="section__header--subtitle">
               <div className="contact__form">
-              <h1 className="projects__header">Contact Me!</h1>
+                <h1 className="projects__header">Contact Me!</h1>
                 <form
                   className="form"
                   action="https://formspree.io/f/meojabrr"
@@ -65,7 +79,7 @@ const Contact = () => {
               <div className="contact__profile">
                 <div className="contact__profile--item">
                   <img
-                    src="/assets/images/loaders/selfie.jpg"
+                    src="/assets/images/loaders/SELFIE.JPG"
                     alt="Triston Palacios"
                   />
                   <div className="contact__profile--col">
