@@ -128,19 +128,19 @@ const Projects = () => {
 
               <div className="card-text">
                 <ul className="pHighlightList">
-                  <li>
+                  <li className="projectPoint">
                     <MdKeyboardDoubleArrowRight />
                     Completely Custom <FaDiscord className="coloredIcon" /> Bot
                   </li>
-                  <li>
+                  <li className="projectPoint">
                     <MdKeyboardDoubleArrowRight />
                     Complex Logic to Consolidate User Searches
                   </li>
-                  <li>
+                  <li className="projectPoint">
                     <MdKeyboardDoubleArrowRight />
                     Developed using Discord Developer Best Practices
                   </li>
-                  <li>
+                  <li className="projectPoint">
                     <MdKeyboardDoubleArrowRight />
                     Hosted and Live for Public Use via BISECT Hosting
                   </li>
@@ -213,11 +213,7 @@ const Projects = () => {
                         title="Propital GitHub"
                         target="_blank"
                       >
-                        <button className="animButton">
-                          <span>
-                            <FaGithub className="coloredIcon" size={"2em"} />
-                          </span>
-                        </button>
+                        <FaGithub className="coloredIcon" size={"2em"} />
                       </a>
                     </span>
                   </div>
@@ -257,21 +253,20 @@ const Projects = () => {
               <h5 className="card-title">
                 <div className="project__header">
                   <span className="projectHighlight">Assortment</span>
-                  <span> Tensorflow </span>
                 </div>
               </h5>
               <ul className="pHighlightList card-text">
-                <li>
+                <li className="projectPoint">
                   <MdKeyboardDoubleArrowRight />
                   Earned the official Tensorflow Developer Certificate
                 </li>
-                <li>
+                <li className="projectPoint">
                   <MdKeyboardDoubleArrowRight />
                   Developed a multivariate time series model predicting future
                   S&P 500 prices using economic indicators (interest rates,
                   unemployment, CPI, VIX).
                 </li>
-                <li>
+                <li className="projectPoint">
                   <MdKeyboardDoubleArrowRight />
                   Conjured a spam detection A.I. with the Universal Sentence
                   Encoder, achieving 98% accuracy on validation data.
@@ -337,31 +332,27 @@ const Projects = () => {
                     </a>
                   </div>
                   <div className="col">
-                    <span className="paddingButton">
-                      <a
-                        href="https://github.com/tristonpalacios/Propital"
-                        title="Propital GitHub"
-                        target="_blank"
-                      >
-                        <button className="animButton">
-                          <span>
-                            <FaGithub className="coloredIcon" size={"2em"} />
-                          </span>
-                        </button>
-                      </a>
-                    </span>
+                    <a
+                      href="https://github.com/tristonpalacios/Propital"
+                      title="Propital GitHub"
+                      target="_blank"
+                    >
+                      <span>
+                        <FaGithub className="coloredIcon" size={"2em"} />
+                      </span>
+                    </a>
                   </div>
                   <div className="col">
                     <div className="icons d-flex mb-3 justify-content-between flex-grow-1">
-                      {["PYTHON", "A.I.", "FORECASTING"].map((title, index) => (
+                      {["PYTHON", "A.I.", "CERTIFICATE"].map((title, index) => (
                         <a
                           key={index}
                           href="#"
                           title={title}
-                          className="animSVGLink icon"
+                          className="animSVGLink icon "
                           ref={(el) => (linksRef.current[index] = el)}
                         >
-                          <span className="linkText">{title}</span>
+                          <span className="linkText ">{title}</span>
                           <svg width="100%" height="9" viewBox="0 0 101 9">
                             <path
                               d="M.426 1.973C4.144 1.567 17.77-.514 21.443 1.48 24.296 3.026 24.844 4.627 27.5 7c3.075 3.748 6.642-4.141 10.066-4.688 2.517-1.2 13.237 5.425 17.59 2.745C58.5 3 60.464-1.786 66 2c1.996 1.365 3.174 3.737 5.286 4.41 5.423 1.727 25.34-7.981 29.14-1.294"
@@ -405,18 +396,18 @@ const Projects = () => {
                 </div>
               </h5>
               <ul className="pHighlightList card-text">
-                <li>
+                <li className="projectPoint">
                   <MdKeyboardDoubleArrowRight />
                   Designed a custom deep learning neural style transfer AI
                   network using VGG19 to blend content and style images through
                   computer vision.
                 </li>
-                <li>
+                <li className="projectPoint">
                   <MdKeyboardDoubleArrowRight />
                   Optimized training loop with TensorFlow's GradientTape by
                   focusing on backpropagation and regularization.
                 </li>
-                <li>
+                <li className="projectPoint">
                   <MdKeyboardDoubleArrowRight />
                   Boosted image processing quality and efficiency using total
                   variation loss and data augmentation.

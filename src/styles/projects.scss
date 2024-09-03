@@ -178,13 +178,28 @@
   }
   .project__tags {
     gap: 6px;
-    font-size: 1.4rem; /* Use rem for responsive font size */
+    font-size: 1rem; /* Use rem for responsive font size */
   }
   .project .coolCircleEyeButton {
     transform: translate(0);
   }
   .project__header span {
     font-size: 2.5rem; /* Use rem for responsive font size */
+  }
+  .linkText{
+    font-size: 1rem;
+  }
+
+  .projectPoint{
+    font-size: 1.5rem;
+  }
+
+  .eye{
+    size: 1rem;
+  }
+
+  .paddingButton{
+    width: 5vw;
   }
 }
 

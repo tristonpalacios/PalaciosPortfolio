@@ -79,7 +79,7 @@ const Contact = () => {
               <div className="contact__profile">
                 <div className="contact__profile--item">
                   <img
-                    src="/assets/images/loaders/SELFIE.JPG"
+                    src="/assets/images/loaders/Selfie.JPG"
                     alt="Triston Palacios"
                   />
                   <div className="contact__profile--col">
