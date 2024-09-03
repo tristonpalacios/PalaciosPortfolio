@@ -12,13 +12,13 @@ const photos = [
     src: "/assets/images/loaders/Tagilla.png",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "Photo of Tagilla",
   },
   {
     src: "/assets/images/loaders/PropitalAmmo1.png",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "Photo by Discord UI",
   },
 ];
 
@@ -27,7 +27,7 @@ const TensorFlowCertPhotos = [
     src: "/assets/images/loaders/tensorflow.png",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "Photo of Tensorflow logo",
   },
 ];
 
@@ -36,43 +36,43 @@ const NSSPhotos = [
     src: "/assets/images/loaders/dos.jpeg",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "Photo of Dos",
   },
   {
     src: "/assets/images/loaders/dos2.jpg",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "Photo art to be applied to Dos Image",
   },
   {
     src: "/assets/images/loaders/dos3.png",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "AI Style Transfer on Dos",
   },
   {
     src: "/assets/images/loaders/moni1.jpeg",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "Photo of Monica Palacios",
   },
   {
     src: "/assets/images/loaders/moni2.jpg",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "Photo of art to be applied to Monica",
   },
   {
     src: "/assets/images/loaders/moni3.png",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "AI Style Transfer on Monica",
   },
   {
     src: "/assets/images/loaders/Sponge3.gif",
     width: 1080,
     height: 720,
-    alt: "Photo by Diego Guzmán",
+    alt: "GIF of Style Transfer",
   },
 ];
 
@@ -104,7 +104,7 @@ const Projects = () => {
     <div id="Projects">
       <h1 className="projects__header">What I've Been Up To</h1>
 
-      <div className="card mb-3">
+      <div className="card shadow mb-3">
         <div className="row g-0">
           <div className="col-md-5 flex-fill">
             <Carousel controls={false} indicators={false} interval={3000}>
@@ -250,7 +250,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="card mb-3">
+      <div className="card shadow mb-3">
         <div className="row g-0">
           <div className="col-md-7">
             <div className="card-body">
@@ -383,7 +383,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <div className="card mb-3">
+      <div className="card shadow mb-3">
         <div className="row g-0">
           <div className="col-md-5 flex-fill">
             <Carousel interval={3000}>
@@ -407,20 +407,19 @@ const Projects = () => {
               <ul className="pHighlightList card-text">
                 <li>
                   <MdKeyboardDoubleArrowRight />
-                  Designed a custom deep learning neural style transfer model
-                  using VGG19 so that I could blend content and style images
-                  through computer vision.
+                  Designed a custom deep learning neural style transfer AI
+                  network using VGG19 to blend content and style images through
+                  computer vision.
                 </li>
                 <li>
                   <MdKeyboardDoubleArrowRight />
-                  Developed an optimized training loop with TensorFlow's
-                  GradientTape, focusing on backpropagation and regularization.
+                  Optimized training loop with TensorFlow's GradientTape by
+                  focusing on backpropagation and regularization.
                 </li>
                 <li>
                   <MdKeyboardDoubleArrowRight />
-                  Achieved efficient image processing and high-quality results
-                  using advanced techniques like total variation loss and data
-                  augmentation.
+                  Boosted image processing quality and efficiency using total
+                  variation loss and data augmentation.
                 </li>
               </ul>
             </div>

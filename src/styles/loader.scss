@@ -36,41 +36,59 @@
             background:  $green-color;
         }
     }
-    &__text{
+    &__text {
         position: relative;
         color: white;
         font-size: 2em;
         font-weight: 700;
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: center;
-        
-        &--dot{
-            width: 5%;
-            height: 2vh;
-            margin: 0 3px;
-            border-radius: 50%;
-            background: white;
-            animation: pulse 1s infinite;
-            @keyframes pulse {
-                from{
-                    opacity: 0;
-                    background:  $dark-green-color;
-                }to{
-                    opacity: 1;
-                }
+      
+        &--dot {
+          width: 5%;
+          height: 2vh;
+          margin: 0 3px;
+          border-radius: 50%;
+          background: white;
+          animation: pulse 1s infinite;
+      
+          @keyframes pulse {
+            from {
+              opacity: 0;
+              background: $dark-green-color;
             }
+            to {
+              opacity: 1;
+            }
+          }
         }
-        &--border{
-            width: 85%;
-            height: .05em;
-            background:  $green-color;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+      
+        &--border {
+          width: 85%;
+          height: 0.05em;
+          background: $green-color;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
         }
-    }
+      
+        // Media query for mobile responsiveness
+        @media (max-width: 768px) {
+          font-size: 1.2em; // Smaller font size for mobile
+          padding-top: 20%;
+      
+          &--dot {
+            width: 7%;  // Adjust dot size for better visibility on mobile
+            height: 3vh; // Adjust height for mobile
+          }
+      
+          &--border {
+            width: 90%;  // Make the border wider to suit smaller screens
+          }
+        }
+      }
     &__counter{
         position: absolute;
         top: 70%;

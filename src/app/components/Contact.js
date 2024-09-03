@@ -50,7 +50,7 @@ const Contact = () => {
                   </div>
                   <div className="form__flex">
                     <div className="form__info">
-                      <label htmlFor="Email">Get in touch with me at</label>
+                      <label htmlFor="Email">reach me at</label>
                       <input
                         type="text"
                         name="Email"
