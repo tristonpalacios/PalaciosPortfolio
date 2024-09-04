@@ -110,6 +110,9 @@ export default function Home() {
 
   return (
     <>
+      <div class="landscape-overlay">
+        Please rotate your device to portrait mode for the best experience.
+      </div>
       <PageHead />
       <Loading />
       <div className="landing">

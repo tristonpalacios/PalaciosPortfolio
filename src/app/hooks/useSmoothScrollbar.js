@@ -1,13 +1,13 @@
 // src/hooks/useSmoothScrollbar.js
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import Scrollbar, { ScrollbarPlugin } from "smooth-scrollbar";
 
 class DisableScrollPlugin extends ScrollbarPlugin {
-  static pluginName = 'disableScroll';
+  static pluginName = "disableScroll";
 
   static defaultOptions = {
-    direction: '',
+    direction: "",
   };
 
   transformDelta(delta) {
@@ -20,7 +20,7 @@ class DisableScrollPlugin extends ScrollbarPlugin {
 }
 
 class AnchorPlugin extends ScrollbarPlugin {
-  static pluginName = 'anchor';
+  static pluginName = "anchor";
 
   onHashChange = () => {
     this.jumpToHash(window.location.hash);
@@ -29,13 +29,13 @@ class AnchorPlugin extends ScrollbarPlugin {
   onClick = (event) => {
     const { target } = event;
 
-    if (target.tagName !== 'A') {
+    if (target.tagName !== "A") {
       return;
     }
 
-    const hash = target.getAttribute('href');
+    const hash = target.getAttribute("href");
 
-    if (!hash || hash.charAt(0) !== '#') {
+    if (!hash || hash.charAt(0) !== "#") {
       return;
     }
 
@@ -45,28 +45,33 @@ class AnchorPlugin extends ScrollbarPlugin {
   jumpToHash = (hash) => {
     const { scrollbar } = this;
 
-    if (!hash) {
-      return;
+    if (!hash || hash === "#") {
+      return; // Exit early if the hash is empty or only '#'
     }
 
     // reset scrollTop
     scrollbar.containerEl.scrollTop = 0;
 
-    scrollbar.scrollIntoView(document.querySelector(hash));
+    const targetElement = document.querySelector(hash);
+    if (targetElement) {
+      scrollbar.scrollIntoView(targetElement);
+    } else {
+      console.warn(`Element with hash ${hash} not found.`);
+    }
   };
 
   onInit() {
     this.jumpToHash(window.location.hash);
 
-    window.addEventListener('hashchange', this.onHashChange);
+    window.addEventListener("hashchange", this.onHashChange);
 
-    this.scrollbar.contentEl.addEventListener('click', this.onClick);
+    this.scrollbar.contentEl.addEventListener("click", this.onClick);
   }
 
   onDestory() {
-    window.removeEventListener('hashchange', this.onHashChange);
+    window.removeEventListener("hashchange", this.onHashChange);
 
-    this.scrollbar.contentEl.removeEventListener('click', this.onClick);
+    this.scrollbar.contentEl.removeEventListener("click", this.onClick);
   }
 }
 
@@ -80,10 +85,10 @@ export default function useSmoothScrollbar(shouldInit) {
 
     const options = {
       alwaysShowTracks: false,
-      damping: 0.05,  // Adjusted damping value for smooth scrolling
+      damping: 0.05, // Adjusted damping value for smooth scrolling
       plugins: {
         disableScroll: {
-          direction: 'x',
+          direction: "x",
         },
       },
     };

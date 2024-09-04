@@ -1,3 +1,37 @@
+/* Styles for landscape mode */
+@media only screen and (orientation: landscape) and (max-width: 1000px) {
+  .landscape-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0); /* Adjust opacity for better contrast */
+    color: white;
+    font-size: 2em;
+    z-index: 1000;
+  }
+
+  .content {
+    display: none;
+  }
+}
+
+/* Default styles for portrait mode or widths greater than 100px */
+@media only screen and (orientation: portrait), (min-width: 1000px) {
+  .landscape-overlay {
+    display: none;
+  }
+
+  .content {
+    display: block;
+  }
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -9,7 +43,8 @@
 html, body {
     height: 100%;
     overflow: hidden;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    background-color: black;
   }
   
   .smooth-scroll-container {
