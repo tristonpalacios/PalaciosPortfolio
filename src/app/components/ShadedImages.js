@@ -1,5 +1,5 @@
 const shadedImages = {
-  vLogo: "/assets/images/loaders/VLogo.png",
+  vLogo: "/assets/images/loaders/vLogo.png",
   agesFile: "/assets/images/loaders/AgeSelfie.png",
   cylcop: "/assets/images/loaders/Cyclop.png",
   me: "/assets/images/loaders/me.png",
